@@ -52,7 +52,7 @@ Note: ```SqLite``` database has been used in this project.
 
 Then clone the project with the following command:
 ```
-git clone git@github.com:farjanul-nayem/strativ-django.git
+git clone git@github.com:farjanul-nayem/strativ_django.git
 ```
 
 ```Create a specific environment``` for the project using the following command. ```virtualenv <name>```
@@ -75,9 +75,9 @@ If you use the following command, the project will run. Then you can see the ```
 ./manage.py runserver
 ```
 
-<img src="https://github.com/farjanul-nayem/strativ-django/blob/master/demo/Screenshot%201.png?raw=true"/>
-<img src="https://github.com/farjanul-nayem/strativ-django/blob/master/demo/Screenshot%202.png?raw=true"/>
-<img src="https://github.com/farjanul-nayem/strativ-django/blob/master/demo/Screenshot%203.png?raw=true"/>
+<img src="https://github.com/farjanul-nayem/strativ_django/blob/master/demo/Screenshot%201.png?raw=true"/>
+<img src="https://github.com/farjanul-nayem/strativ_django/blob/master/demo/Screenshot%202.png?raw=true"/>
+<img src="https://github.com/farjanul-nayem/strativ_django/blob/master/demo/Screenshot%203.png?raw=true"/>
 
 ## Existing Database
 This project already has some data in its database. 
@@ -112,7 +112,7 @@ Finally use browsing this url & enjoy. http://127.0.0.1:8000
 ### RESTful APIs
 If your machine does not have ```Postman software``` installed, download and install it from here. [Download](https://www.postman.com/downloads/)
 
-Now download this file * [Postman File](https://github.com/farjanul-nayem/strativ-django/blob/master/demo/Strativ.postman_collection.json) and import it on ```Postman```, you will get all the RESTful APIs.
+Now download this file * [Postman File](https://github.com/farjanul-nayem/strativ_django/blob/master/demo/Strativ.postman_collection.json) and import it on ```Postman```, you will get all the RESTful APIs.
 
 
 # Thank You!!!
