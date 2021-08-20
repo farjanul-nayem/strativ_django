@@ -25,9 +25,13 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled mt-3 mb-4">
-                        {% for item in neighbour_list%}
-                            <h4 class="card-title pricing-card-title">{{ item }}</h4>
-                        {% endfor %}
+                        {% if neighbour_list %}
+                            {% for item in neighbour_list%}
+                                <h4 class="card-title pricing-card-title">{{ item }}</h4>
+                            {% endfor %}
+                        {% else %}
+                            <p style="color: gray">{{ country.name }} has no neighbor(s)</p>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

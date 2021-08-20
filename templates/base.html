@@ -20,7 +20,11 @@
                     <input id="countryNameInput" onkeyup="countryFilter()" class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
                 </div>
             {% endif %}
-
+            {% if user.is_authenticated %}
+                <div class="col-sm-4 float-end">
+                    <button type="button" class="btn btn-light"><a href="{% url 'logout' %}" style="text-decoration: none;">Logout</a></button>
+                </div>
+            {% endif %}
         </div>
     </nav>
 </div>

@@ -19,11 +19,27 @@ INSTALLED_APPS = [
     # custom app
     'country',
     'api',
+    'accounts',
 
     # module_app
     'rest_framework',
     'rest_framework.authtoken',
 ]
+
+APPEND_SLASH = False
+LOGIN_URL = '/login'
+ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.SignupForm'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

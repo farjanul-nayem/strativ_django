@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "8b3df7be-88a5-45a9-918c-c5a3029fa0ba",
+		"name": "Strativ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"farjanul\",\n    \"first_name\": \"Farjanul\",\n    \"last_name\": \"Nayem\",\n    \"email\": \"farjanul@icloud.com\",\n    \"password\": \"helloadmin\",\n    \"password2\": \"helloadmin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/signup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"farjanul\",\n    \"password\": \"helloadmin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/country",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"country"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/country/<country_id>",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"country",
+						"<country_id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Bangladesh\",\n  \"alphacode2\": \"BD\",\n  \"alphacode3\": \"BGD\",\n  \"capital\": \"Dhaka\",\n  \"population\": 161006790,\n  \"flag\": \"https://restcountries.eu/data/bgd.svg\",\n  \"timezone\": [\n    {\n      \"name\": \"UTC+06:10\"\n    }\n  ],\n  \"languages\": [\n    {\n      \"name\": \"Bengali2\",\n      \"nativeName\": \"বাংলা\",\n      \"iso639_1\": \"bn\",\n      \"iso639_2\": \"ben\"\n    }\n  ],\n  \"neighbouring\": [\n    {\n      \"name\": \"MMR\"\n    },\n    {\n      \"name\": \"IND\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/country",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"country"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Bangladesh2\",\n  \"alphacode2\": \"BD\",\n  \"alphacode3\": \"BGD\",\n  \"capital\": \"Dhaka\",\n  \"population\": 161006790,\n  \"flag\": \"https://restcountries.eu/data/bgd.svg\",\n  \"timezone\": [\n    {\n      \"name\": \"UTC+06:00\"\n    }\n  ],\n  \"languages\": [\n    {\n      \"name\": \"Bengali\",\n      \"nativeName\": \"বাংলা\",\n      \"iso639_1\": \"bn\",\n      \"iso639_2\": \"ben\"\n    }\n  ],\n  \"neighbouring\": [\n    {\n      \"name\": \"MMR\"\n    },\n    {\n      \"name\": \"IND\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/country/<country_id>",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"country",
+						"<country_id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/country/<country_id>",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"country",
+						"<country_id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country neighbouring list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/neighbouring/<country_id>",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"neighbouring",
+						"<country_id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country Search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/search?q=<country_name>",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "<country_name>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country search by language",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{bas_url}}/api/search_lang?q=<language_name>",
+					"host": [
+						"{{bas_url}}"
+					],
+					"path": [
+						"api",
+						"search_lang"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "<language_name>"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
