@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # custom app
     'country',
+    'api',
 
     #module_app
     'rest_framework',

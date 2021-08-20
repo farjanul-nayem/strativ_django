@@ -7,7 +7,7 @@ class CountryModel(admin.ModelAdmin):
     search_fields = ["name"]
 
     class Meta:
-        Model=Country
+        Model = Country
 
 
 admin.site.register(Language)
