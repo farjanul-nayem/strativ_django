@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <style>
+        th, td {
+            text-align: center;
+        }
+    </style>
+{% endblock header %}
+
+
+{% block body %}
+    {% if country %}
+        <div class="table-responsive">
+            <table id="countryTable" class="table table-striped">
+                <tr>
+                    <th scope="col">SL</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Alphacode</th>
+                    <th scope="col">Capital</th>
+                    <th scope="col">Population</th>
+                    <th scope="col">Timezone</th>
+                    <th scope="col">Flag</th>
+                    <th scope="col">Action</th>
+                </tr>
+
+                {% for item in country %}
+                    <tr>
+                        <td scope="row">{{ forloop.counter }}</td>
+                        <td>{{ item.name}}</td>
+                        <td>{{ item.alphacode2}}</td>
+                        <td>{{ item.capital}}</td>
+                        <td>{{ item.population}}</td>
+                        <td>
+                            {% for x in item.timezone.all %}
+                                <a>{{ x }}</a>
+                            {% endfor %}
+                        </td>
+                        <td><img src={{ item.flag}} class="img-fluid mx-auto d-block" style="width: 50px;"></td>
+                        <td><a href="{% url 'details' pk=item.pk %}"><button type="button" class="btn btn-link" style="text-decoration: none;">Details</button></a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% else %}
+        <div class="d-flex justify-content-center">
+            <div class="order-3 p-2">No Data! Please fetch the data from API <a href="{% url 'fetched_data' %}" class="link-primary" style="text-decoration: none;">Get Data</a></div>
+        </div>
+    {% endif %}
+{% endblock body %}
+
+{% block footer %}
+    <script>
+        function countryFilter() {
+            const input = document.getElementById("countryNameInput");
+            const inputStr = input.value.toUpperCase();
+            document.querySelectorAll('#countryTable tr:not(.header)').forEach((tr) => {
+                const anyMatch = [...tr.children]
+                    .some(td => td.textContent.toUpperCase().includes(inputStr));
+                if (anyMatch) tr.style.removeProperty('display');
+                else tr.style.display = 'none';
+            });
+        }
+    </script>
+{% endblock footer %}
